@@ -6,6 +6,7 @@ import com.example.surveyapp.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import org.springframework.beans.factory.annotation.Value;
 
 import java.time.format.DateTimeFormatter;
 
@@ -42,6 +43,9 @@ public class SurveyServiceImpl implements SurveyService {
     private EmployeeRepository employeeRepository;
 
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM dd, yyyy hh:mm a");
+
+    @Value("${frontend.url}")
+    private String frontendUrl;
 
     
     
@@ -235,7 +239,7 @@ public class SurveyServiceImpl implements SurveyService {
         // ==========================
 
         // 🔗 Generate survey link
-        String surveyLink = "https://busboy-backless-rhyme.ngrok-free.dev/survey/" + surveyId;
+       String surveyLink = frontendUrl + "/survey/" + surveyId;
 
         // 📥 Fetch employees
         List<Employee> employees = employeeRepository.findAll();
