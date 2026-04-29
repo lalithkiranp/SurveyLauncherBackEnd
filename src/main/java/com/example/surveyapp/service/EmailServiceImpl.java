@@ -16,13 +16,14 @@ public class EmailServiceImpl implements EmailService {
     @Async
     @Override
     public void sendEmail(String to, String subject, String body) {
-
+        System.out.println("Sending email to: " + to);
         SimpleMailMessage message = new SimpleMailMessage();
         message.setTo(to);
         message.setSubject(subject);
         message.setText(body);
-
+        
         mailSender.send(message);
+        System.out.println("Email sent successfully!");
     }
     
     public void sendSurveyEmail(String toEmail, String surveyLink) {
