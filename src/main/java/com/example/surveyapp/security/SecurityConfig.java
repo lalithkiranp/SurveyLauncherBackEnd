@@ -60,8 +60,9 @@ public class SecurityConfig {
         CorsConfiguration config = new CorsConfiguration();
 
         config.setAllowedOrigins(List.of(
-            "http://localhost:5173"
-            // add ngrok frontend URL here later
+            "http://localhost:5173",
+            "https://survey-launcher-front-end.vercel.app/"
+            // add production frontend URL here later
         ));
 
         config.setAllowedMethods(List.of(
