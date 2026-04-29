@@ -61,7 +61,7 @@ public class SecurityConfig {
 
         config.setAllowedOrigins(List.of(
             "http://localhost:5173",
-            "https://survey-launcher-front-end.vercel.app/"
+            "https://survey-launcher-front-didekr6vc-lalithkiranps-projects.vercel.app/"
             // add production frontend URL here later
         ));
 
